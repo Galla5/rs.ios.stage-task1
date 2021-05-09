@@ -3,7 +3,13 @@
 @implementation NSArray (MinRotated)
 
 - (NSNumber *)minRotated {
-    return nil;
+    NSNumber *minNumber = [self firstObject];
+    for (NSNumber* item in self) {
+        if ([minNumber intValue] >= [item intValue]) {
+            minNumber = item;
+        }
+    }
+    return minNumber;
 }
 
 @end
